@@ -83,7 +83,7 @@ with st.form("event_form"):
         event_type = st.selectbox("Event Type", ["Cultural", "Club", "Academic", "Sports", "Other"])
     with col2:
         venue = st.text_input("Venue", placeholder="e.g. Kalidas")
-        organized_by = st.text_input("Organized By", placeholder="e.g. Cultural Committee")
+        organized_by = st.text_input("Organized By", value="DotSlash")
         no_of_participants = st.number_input("No. of Participants", min_value=1, value=50)
         
     brief_report = st.text_area("Brief Report", height=200, placeholder="Write the report content here...")
