@@ -10,12 +10,17 @@ def generate_report_docx(event_details, photo_files):
     """Generates the Word document report based on the provided details and photos."""
     doc = Document()
     
-    # Add Logo at the top
+    # Add Logo to the Header so it appears on every page (like the empty page format)
     try:
-        # Assumes logo.jpg is in the same directory as app.py
-        doc.add_picture("logo.jpg", width=Inches(2.0))
+        section = doc.sections[0]
+        header = section.header
+        # The header already has an empty paragraph by default
+        header_para = header.paragraphs[0] if header.paragraphs else header.add_paragraph()
+        header_para.alignment = WD_ALIGN_PARAGRAPH.LEFT
+        header_run = header_para.add_run()
+        header_run.add_picture("logo.jpg", width=Inches(1.8))
     except Exception as e:
-        st.warning(f"Could not load logo: {e}")
+        st.warning(f"Could not load logo into header: {e}")
         
     # Title
     title = doc.add_heading(f"{event_details['Event Name']}", level=1)
