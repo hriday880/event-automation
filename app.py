@@ -10,6 +10,13 @@ def generate_report_docx(event_details, photo_files):
     """Generates the Word document report based on the provided details and photos."""
     doc = Document()
     
+    # Add Logo at the top
+    try:
+        # Assumes logo.jpg is in the same directory as app.py
+        doc.add_picture("logo.jpg", width=Inches(2.0))
+    except Exception as e:
+        st.warning(f"Could not load logo: {e}")
+        
     # Title
     title = doc.add_heading(f"{event_details['Event Name']}", level=1)
     title.alignment = WD_ALIGN_PARAGRAPH.CENTER
