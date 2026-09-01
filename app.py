@@ -80,7 +80,7 @@ with st.form("event_form"):
         academic_year = st.text_input("Academic Year", value="2026-27")
         event_name = st.text_input("Event Name", placeholder="e.g. FUSIP Ice Breakers")
         event_date = st.date_input("Date of Activity")
-        event_type = st.selectbox("Event Type", ["Cultural", "Club", "Academic", "Sports", "Other"])
+        event_type = st.selectbox("Event Type", ["Cultural", "Club", "Academic", "Sports", "Other"], index=1)
     with col2:
         venue = st.text_input("Venue", placeholder="e.g. Kalidas")
         organized_by = st.text_input("Organized By", value="DotSlash")
