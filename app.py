@@ -77,7 +77,7 @@ with st.form("event_form"):
     st.subheader("1. Event Details")
     col1, col2 = st.columns(2)
     with col1:
-        academic_year = st.text_input("Academic Year", value="2025-26")
+        academic_year = st.text_input("Academic Year", value="2026-27")
         event_name = st.text_input("Event Name", placeholder="e.g. FUSIP Ice Breakers")
         event_date = st.date_input("Date of Activity")
         event_type = st.selectbox("Event Type", ["Cultural", "Club", "Academic", "Sports", "Other"])
